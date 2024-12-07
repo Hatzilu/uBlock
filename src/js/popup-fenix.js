@@ -877,9 +877,17 @@ const toggleNetFilteringSwitch = function(ev) {
         what: 'toggleNetFiltering',
         url: popupData.pageURL,
         scope: ev.ctrlKey || ev.metaKey ? 'page' : '',
+        state: dom.cl.toggle(dom.body, 'off'),
+        tabId: popupData.tabId,
+    });
+    console.log({
+        what: 'toggleNetFiltering',
+        url: popupData.pageURL,
+        scope: ev.ctrlKey || ev.metaKey ? 'page' : '',
         state: dom.cl.toggle(dom.body, 'off') === false,
         tabId: popupData.tabId,
     });
+    
     renderTooltips('#switch');
     hashFromPopupData();
 };
